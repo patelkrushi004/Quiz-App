@@ -17,6 +17,7 @@ body{
 }
 
 :where(.config-container,.quiz-container){
+      display:none;
        background: #f1faee;
       border-radius: 8px;
       box-shadow: 0 10px 25px rgbe(0,0,0,0.13);
@@ -72,7 +73,8 @@ body{
  border-color: #457b9d;
  background-color: #c9e2f2;
 }
-.config-option button:hover{
+.config-option button:hover,
+.quiz-content .answer-option:hover{
       background:#c9e2f2 ;
 }
 
@@ -80,7 +82,8 @@ body{
      flex: 1 1 10%;
 
 }
-.config-container .start-quiz-btn{
+.config-container .start-quiz-btn,
+.quiz-footer .next-question-btn{
       display: block;
       width: 150px;
       align-items: center;
@@ -96,7 +99,13 @@ body{
       background: #457b9d;
       transition: bac;
 }
-.config-container .start-quiz-btn:hover{
+.config-container .start-quiz-btn{
+      margin-top: 30px;
+}
+
+
+.config-container .start-quiz-btn:hover,
+.quiz-footer .next-question-btn:hover{
  background: #c9e2f2;
  color: black;     
 }
@@ -153,11 +162,53 @@ font-weight:700 ;
 }
 
 .quiz-content .answer-option{
+      display: flex;
+      align-items: center;
+      justify-content:space-between ;
      padding: 13px 16px;
      background: #f3f1ff;
      font-weight: 500;
      cursor:pointer;
      border: 1px solid #b5acff; 
      border-radius: 6px;
+      transition: 0.3s ease;
+}
 
+.quiz-content .answer-option span{
+      display: block;
+      flex-shrink: 0;
+      margin: -4px -3px -4px 12px;
+}
+.quiz-content .answer-option.correct{
+      border-color: #a7e4b5;
+      background: #d4edda;
+      color: #155724;
+}
+
+.quiz-content .answer-option.incorrect{
+      border-color: #f4bec3;
+      background: #f8d7da;
+      color: #721c24;
+}
+.quiz-container .quiz-footer{
+      padding: 15px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #c6c6c6;
+}
+.quiz-footer .quiz-status{
+      font-weight: 500;
+}
+
+.quiz-footer .quiz-status b{
+      font-weight: 500;
+      
+}
+.quiz-footer .next-question-btn{
+      display: inline-flex;
+      margin-top: 5px;
+      gap: 5px;
+      align-items: center;
+      padding: 9px 17px;
 }
