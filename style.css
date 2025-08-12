@@ -15,9 +15,16 @@ body{
       min-height: 100vh;
       background: #457b9d;
 }
+
+:where(.config-container,.quiz-container){
+       background: #f1faee;
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgbe(0,0,0,0.13);
+}
 .config-container{
+      display: none;
       width:415px;
-      padding:25px;
+      padding:35px;
       text-align: center;
       background: #f1faee;
       border-radius: 8px;
@@ -47,6 +54,7 @@ body{
       gap: 12px;
       padding: 0 30px;
       justify-content: center;
+      margin-bottom: 40px;
 }
 
 .config-option button{
@@ -59,11 +67,97 @@ body{
       cursor: pointer;
       transition: 0.3s ease;
 }
+.config-option button.active{
+ color: #457b9d;
+ border-color: #457b9d;
+ background-color: #c9e2f2;
+}
 .config-option button:hover{
       background:#c9e2f2 ;
 }
 
 .questin-options button{
      flex: 1 1 10%;
+
+}
+.config-container .start-quiz-btn{
+      display: block;
+      width: 150px;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      margin-left: 88px;
+      margin-top: 30px;
+      padding:15px 20px;
+      font-size: 1rem;
+      border-radius: 6px;
+      background: #457b9d;
+      transition: bac;
+}
+.config-container .start-quiz-btn:hover{
+ background: #c9e2f2;
+ color: black;     
+}
+
+.quiz-container{
+      width: 480px;
+}
+
+.quiz-container .quiz-header{
+      display: flex;
+      align-items: center;
+      padding:14px 25px;
+      justify-content: space-between;
+      box-shadow: 0 3px 6px rgba(0 ,0, 0, 0.09);
+}
+
+.quiz-header .quiz-title{
+font-size: 1.43rem;
+font-weight:700 ;
+}
+
+.quiz-header .quiz-timer{
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      width: 70px;
+      color: #fff;
+      font-weight:600;
+      padding: 7px 9px;
+      border-radius: 6px;
+      background:#32313c ;
+}
+
+.quiz-header .quiz-timer span{
+      font-size: 1.4rem;
+}
+
+.quiz-content{
+      padding: 20px 25px 25px;
+}
+
+
+.quiz-content .question-text{
+      font-size:1.5rem;
+      font-weight: 600;
+}
+
+.quiz-content .answer-options{
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      list-style: none;
+      margin-top: 20px;
+}
+
+.quiz-content .answer-option{
+     padding: 13px 16px;
+     background: #f3f1ff;
+     font-weight: 500;
+     cursor:pointer;
+     border: 1px solid #b5acff; 
+     border-radius: 6px;
 
 }
