@@ -111,6 +111,7 @@ body{
 }
 
 .quiz-container{
+      display: block;
       width: 480px;
 }
 
